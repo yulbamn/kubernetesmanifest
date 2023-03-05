@@ -15,7 +15,7 @@ spec:
         app: shopping-web
     spec:
       containers:
-      - image: yulbamn/shopping-web:8
+      - image: yulbamn/shopping-web:9
         name: shopping-web
 ---
 apiVersion: v1
