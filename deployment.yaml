@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shopping-web
+  name: shopping-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopping-web
+  template:
+    metadata:
+      labels:
+        app: shopping-web
+    spec:
+      containers:
+      - image: yulbamn/shopping-web:latest
+        name: shopping-web
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopping-web-svc
+  labels:
+    app: shopping-web
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: shopping-web
