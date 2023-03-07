@@ -1,9 +1,7 @@
 node {
     def app
 
-    stage('Clone repository') {
-      
-
+    stage('Clone repository') {     
         checkout scm
     }
 
@@ -21,8 +19,8 @@ node {
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
-      }
+                    }
+                }
+            }
     }
-  }
-}
 }
