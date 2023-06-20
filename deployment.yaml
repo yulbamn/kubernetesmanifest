@@ -15,7 +15,7 @@ spec:
         app: shopping-web
     spec:
       containers:
-      - image: yulbamn/shopping-web:2
+      - image: zenaksacr.azurecr.io/shopping-web:latest
         name: shopping-web
 ---
 apiVersion: v1
