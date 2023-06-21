@@ -14,7 +14,7 @@ node {
                         sh "sed -i 's+zenaksacr.azurecr.io/shopping-web.*+zenaksacr.azurecr.io/shopping-web:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
-                        sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                        sh "git commit -m 'Done by Jenkins Job changemanifest: ${DOCKERTAG}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
                     }
                 
